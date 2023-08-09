@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap');
+
+/*GERAL*/
+
+:root {
+    --grey: #49566D;
+    --dark-blue: #172339;
+    --cream-white: #FAF8F6;
+    --cream: #F3EDE7;
+}
+
+html {
+    font-size: 62.5%; /*medidas relativas pra fontes*/
+}
+
+body * {
+    font-family: 'Epilogue', sans-serif; /*grau de especificidade maior que o do reset.css*/
+}
+
+.container {
+    padding-right: 16px; /*paddings de 16px ao longo da landing page*/
+    padding-left: 16px;
+}
+
+/*HEADER*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 24px;
+}
+
+.btn-primary {
+    color: var(--dark-blue);
+    border: 1px solid var(--dark-blue);
+    border-radius: 6px;
+    padding: 12px 16px;
+    background-color: var(--cream-white);
+    font-weight: bold;
+    font-size: 1.4rem;
+    transition: all .3s linear;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    color: var(--cream-white);
+    background-color: var(--dark-blue);
+}
+
+/*MAIN*/
+
+/*dúvida pra centralizar essa div
+.container-1  {
+    margin: 0 auto; 
+}
+*/
+
+.pattern-main {
+    position: absolute;
+    max-width: 150px;
+    bottom: 84px;
+    left: 160px;
+}
+
+.heading-l {
+    color: var(--dark-blue);
+    font-size: 3.8rem;
+    font-weight: 400;
+    margin-top: 84px;
+    margin-bottom: 32px;
+    position: relative;
+    line-height: 44px;
+}
+
+.heading-l span {
+    font-weight: bold;
+}
+
+.main-description {
+    color: var(--grey);
+    font-size: 1.6rem;
+    font-weight: 400;
+    margin-bottom: 32px;
+    line-height: 28px;
+}
+
+.btn-secondary {
+    color: var(--cream-white);
+    border: none;
+    border-radius: 6px;
+    padding: 15px 32px;
+    background-color: var(--dark-blue);
+    font-weight: bold;
+    font-size: 1.8rem;
+    /*transition: all .3s linear; o transition não funciona aqui, tem que ser animation por conta do background ser um gradiente*/
+    cursor: pointer;
+    margin-bottom: 55px;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #A060FF 0%, #CB30E3 49.21%, #FFA84E 100%);
+}
+
+.main-hero {
+    display: block;
+    margin: 0 auto;
+}
+
+.main-hero-tablet, .main-hero-desktop {
+    display: none;
+}
+
+main .infos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 32px;
+    margin: 56px 0px;
+    margin-bottom: 237px;
+}
+
+.info-item h1 {
+    color: var(--dark-blue);
+    font-size: 4.8rem;
+    font-weight: bold;
+    line-height: 56px;
+}
+
+.info-item span {
+    color: var(--grey);
+    font-size: 1.6rem;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    line-height: 26px;
+}
+
+/*FOOTER*/
+
+footer .container {
+    background-color: var(--dark-blue);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    position: relative;
+}
+
+footer .pattern-blur {
+    position: absolute;
+    top: -17px;
+    max-width: 280px;
+}
+
+footer .image-jeremy-desktop {
+    display: none;
+}
+
+footer .image-jeremy {
+    position: absolute;
+    top: -174px;
+}
+
+.pattern-footer {
+    max-width: 50px;
+    margin-top: 260px;
+}
+
+footer h1 {
+    color: var(--cream);
+    font-size: 4.0rem;
+    font-weight: 400;
+}
+
+footer h1 span {
+    font-weight: bold;
+}
+
+footer p {
+    color: var(--cream);
+    font-size: 1.8rem;
+    font-weight: 400;
+    line-height: 32px;
+}
+
+footer .span-jeremy {
+    color: var(--cream-white);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding-bottom: 12px; /*não estou conseguindo dar um espaçamento entre esses dois spans*/
+    line-height: 32px;
+}
+
+footer .span-cmo {
+    color: var(--cream);
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    letter-spacing: 2.5px;
+    line-height: 26px;
+}
+
+footer .spans-jeremy-cmo {
+    padding-bottom: 64px;
+}
+
+.nav-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 33px; /*perguntar o mateus sobre esse gap aqui*/
+    background-color: var(--cream);
+}
+
+.nav-footer .logo-footer {
+    margin-top: 56px;
+}
+
+.nav-footer span {
+    color: var(--grey);
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
+.icons-footer {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 1fr;
+    grid-column-gap: 25px;
+    /*não sei como fazer o hover aqui, os icons têm que ficar mais claros*/
+    margin-bottom: 76px;
+}
+
+/*MEDIA QUERY*/
+
+@media screen and (min-width: 768px) {
+    /*GERAL*/
+
+    .container {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+
+    /*HEADER*/
+
+    .navbar {
+        padding-bottom: 60px;
+    }
+
+    /*MAIN*/
+
+    .pattern-main {
+        max-width: 230px;
+        bottom: 128px;
+        left: 233px;
+    }
+
+    .heading-l {
+        font-size: 5.6rem;
+        margin-top: 84px;
+        margin-bottom: 40px;
+        line-height: 64px;
+    }
+
+    .main-description {
+        margin-bottom: 40px;
+    }
+
+    .main-hero {
+        display: none;
+    }
+
+    .main-hero-tablet {
+        display: block;
+        position: absolute;
+        max-width: 280px;
+        top: 128px;
+        right: 39px;
+        z-index: -1;
+    }
+
+    main .infos {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        text-align: center;
+        gap: 120px;
+        margin: 90px 0px;
+        margin-bottom: 237px;
+    }
+
+    /*FOOTER*/
+
+    .container-2 {
+        padding-right: 58px;
+        padding-left: 58px;
+        margin-right: 40px;
+        margin-left: 40px;
+    }
+
+    .nav-footer {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 160px;
+        padding: 72px 40px;
+    }
+
+    .nav-footer .logo-footer {
+        margin-top: 0px;
+    }
+
+    .icons-footer {
+        margin-bottom: 0px;
+    }
+
+}
+
+@media screen and (min-width: 1440px) {
+    /*GERAL*/
+
+    .container {
+        padding-right: 165px;
+        padding-left: 165px;
+    }
+
+    /*HEADER*/
+
+    .navbar {
+        padding-bottom: 170px;
+    }
+
+    /*MAIN*/
+
+    .heading-l {
+        font-size: 7.2rem;
+    }
+
+    main {
+        display: flex;
+        margin: 0 auto;
+    }
+
+    .pattern-main {
+        max-width: 280px;
+        bottom: 149px;
+        left: 304px;
+    }
+
+    .main-hero-tablet  {
+        display: none;
+    }    
+
+    .main-hero-desktop {
+        display: block;
+        position: absolute;
+        max-width: 350px;
+        top: 176px;
+        left: 715px;
+        z-index: -1;
+    }
+
+    main .infos {
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        gap: 60px;
+        margin-left: 285px;
+    }
+
+    /*FOOTER*/
+
+    footer .pattern-blur {
+        top: 143px;
+        left: 53px;
+        max-width: 100%;
+    }
+
+    .image-jeremy {
+        display: none;
+    }
+
+    footer .image-jeremy-desktop {
+        display: block;
+        position: absolute;
+        max-width: 480px;
+        left: 104px;
+        top: -42px;
+    }
+
+    .container-2 {
+        /*display: flex; o display flex não está funcionando aqui*/
+        padding-right: 125px;
+        padding-left: 634px;
+        margin-right: 165px;
+        margin-left: 165px; /*isso aqui não seria caso de margin 0 auto?*/
+    }
+
+    .nav-footer {
+        justify-content: space-around;
+        padding-top: 95px;
+        padding-bottom: 72px;
+    }
+
+}
