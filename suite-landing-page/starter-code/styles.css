@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap');
 
 /*GERAL*/
-
 :root {
     --grey: #49566D;
     --dark-blue: #172339;
@@ -18,12 +17,13 @@ body * {
 }
 
 .container {
-    padding-right: 16px; /*paddings de 16px ao longo da landing page*/
-    padding-left: 16px;
+    /*padding-right: 16px;
+    padding-left: 16px;*/
+    width: 100%;
+    margin: 0 auto;
 }
 
 /*HEADER*/
-
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -49,14 +49,7 @@ body * {
 }
 
 /*MAIN*/
-
-/*dúvida pra centralizar essa div
-.container-1  {
-    margin: 0 auto; 
-}
-*/
-
-.pattern-main {
+.pattern-main { /*magic numbers?*/
     position: absolute;
     max-width: 150px;
     bottom: 84px;
@@ -85,7 +78,7 @@ body * {
     line-height: 28px;
 }
 
-.btn-secondary {
+.btn-secondary { /*não achei códigos de outras pessoas q tenham feito essa transição no botão*/
     color: var(--cream-white);
     border: none;
     border-radius: 6px;
@@ -104,7 +97,7 @@ body * {
 
 .main-hero {
     display: block;
-    margin: 0 auto;
+    margin: 0 auto; /*isso aqui tá sendo aplicado?*/
 }
 
 .main-hero-tablet, .main-hero-desktop {
@@ -138,36 +131,50 @@ main .infos {
 }
 
 /*FOOTER*/
-
-footer .container {
+footer .recommendation-box {
     background-color: var(--dark-blue);
     border-radius: 15px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap: 40px;
+    height: 748px;
+}
+
+.recommendation-box-left {
+    height: 50%;
     position: relative;
 }
 
 footer .pattern-blur {
-    position: absolute;
-    top: -17px;
     max-width: 280px;
+    position: absolute;
+    bottom: 50px;
+    left: calc(50% - 140px);
+}
+
+footer .image-jeremy {
+    max-width: 252px;
+    position: absolute;
+    bottom: 55px;
+    left: calc(50% - 126px);
 }
 
 footer .image-jeremy-desktop {
     display: none;
 }
 
-footer .image-jeremy {
-    position: absolute;
-    top: -174px;
-}
-
 .pattern-footer {
     max-width: 50px;
-    margin-top: 260px;
+    margin-top: 15px;
+    margin-bottom: 40px;
+}
+
+.recommendation-box-right {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
 }
 
 footer h1 {
@@ -192,7 +199,6 @@ footer .span-jeremy {
     font-size: 1.8rem;
     font-weight: bold;
     text-transform: uppercase;
-    padding-bottom: 12px; /*não estou conseguindo dar um espaçamento entre esses dois spans*/
     line-height: 32px;
 }
 
@@ -235,25 +241,22 @@ footer .spans-jeremy-cmo {
     margin-bottom: 76px;
 }
 
-/*MEDIA QUERY*/
-
+/*MEDIA QUERY-TABLET*/
 @media screen and (min-width: 768px) {
     /*GERAL*/
-
     .container {
-        padding-right: 40px;
-        padding-left: 40px;
+        /*padding-right: 40px;
+        padding-left: 40px;*/
+        max-width: 768px;
     }
 
     /*HEADER*/
-
     .navbar {
         padding-bottom: 60px;
     }
 
     /*MAIN*/
-
-    .pattern-main {
+    .pattern-main { /*magic numbers?*/
         max-width: 230px;
         bottom: 128px;
         left: 233px;
@@ -274,7 +277,7 @@ footer .spans-jeremy-cmo {
         display: none;
     }
 
-    .main-hero-tablet {
+    .main-hero-tablet { /*magic numbers?*/
         display: block;
         position: absolute;
         max-width: 280px;
@@ -283,7 +286,7 @@ footer .spans-jeremy-cmo {
         z-index: -1;
     }
 
-    main .infos {
+    main .infos { /*magic numbers?*/
         display: flex;
         flex-direction: row;
         justify-content: center;
@@ -294,12 +297,9 @@ footer .spans-jeremy-cmo {
     }
 
     /*FOOTER*/
-
-    .container-2 {
-        padding-right: 58px;
-        padding-left: 58px;
-        margin-right: 40px;
+    footer .recommendation-box {
         margin-left: 40px;
+        margin-right: 40px;
     }
 
     .nav-footer {
@@ -317,35 +317,33 @@ footer .spans-jeremy-cmo {
     .icons-footer {
         margin-bottom: 0px;
     }
-
 }
 
+/*MEDIA QUERY-DESKTOP*/
 @media screen and (min-width: 1440px) {
     /*GERAL*/
-
     .container {
-        padding-right: 165px;
-        padding-left: 165px;
+        /*padding-right: 165px;
+        padding-left: 165px;*/
+        max-width: 1440px;
     }
 
     /*HEADER*/
-
     .navbar {
         padding-bottom: 170px;
     }
 
     /*MAIN*/
-
     .heading-l {
         font-size: 7.2rem;
     }
 
     main {
         display: flex;
-        margin: 0 auto;
+        margin: 0 auto; /*isso tá funcionando aqui?*/
     }
 
-    .pattern-main {
+    .pattern-main { /*magic numbers?*/
         max-width: 280px;
         bottom: 149px;
         left: 304px;
@@ -353,9 +351,9 @@ footer .spans-jeremy-cmo {
 
     .main-hero-tablet  {
         display: none;
-    }    
+    }
 
-    .main-hero-desktop {
+    .main-hero-desktop { /*magic numbers?*/
         display: block;
         position: absolute;
         max-width: 350px;
@@ -364,7 +362,7 @@ footer .spans-jeremy-cmo {
         z-index: -1;
     }
 
-    main .infos {
+    main .infos { /*magic numbers?*/
         display: flex;
         flex-direction: column;
         text-align: left;
@@ -373,31 +371,44 @@ footer .spans-jeremy-cmo {
     }
 
     /*FOOTER*/
-
-    footer .pattern-blur {
-        top: 143px;
-        left: 53px;
-        max-width: 100%;
+    footer .recommendation-box {
+        margin-left: 164px;
+        margin-right: 164px;
+        flex-direction: row;
+        height: 545px;
     }
 
-    .image-jeremy {
+    .recommendation-box-left {
+        width: 50%;
+    }
+
+    .recommendation-box-right {
+        width: 50%;
+        text-align: left;
+    }
+
+    footer .pattern-blur {
+        max-width: 520px;
+        bottom: -136px;
+        left: calc(50% - 260px);
+    }
+
+    footer .image-jeremy {
         display: none;
     }
 
     footer .image-jeremy-desktop {
         display: block;
         position: absolute;
-        max-width: 480px;
-        left: 104px;
-        top: -42px;
+        max-width: 375px;
+        left: calc(50% - 187px);
+        bottom: -136px;
     }
 
-    .container-2 {
-        /*display: flex; o display flex não está funcionando aqui*/
-        padding-right: 125px;
-        padding-left: 634px;
-        margin-right: 165px;
-        margin-left: 165px; /*isso aqui não seria caso de margin 0 auto?*/
+    .pattern-footer {
+        max-width: 65px;
+        margin-left: 53px;
+        margin-right: 53px;
     }
 
     .nav-footer {
@@ -405,5 +416,4 @@ footer .spans-jeremy-cmo {
         padding-top: 95px;
         padding-bottom: 72px;
     }
-
 }
