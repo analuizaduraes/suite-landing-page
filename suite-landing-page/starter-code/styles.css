@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Epilogue:wght@400;700&display=swap');
 
-/*GERAL*/
 :root {
     --grey: #49566D;
     --dark-blue: #172339;
@@ -9,26 +8,24 @@
 }
 
 html {
-    font-size: 62.5%; /*medidas relativas pra fontes*/
+    font-size: 62.5%;
 }
 
 body * {
-    font-family: 'Epilogue', sans-serif; /*grau de especificidade maior que o do reset.css*/
+    font-family: 'Epilogue', sans-serif;
 }
 
 .container {
-    padding-right: 16px;
-    padding-left: 16px;
     width: 100%;
     margin: 0 auto;
 }
 
-/*HEADER*/
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 24px;
+    padding: 0 16px;
 }
 
 .btn-primary {
@@ -48,7 +45,6 @@ body * {
     background-color: var(--dark-blue);
 }
 
-/*MAIN*/
 .heading-container {
     position: relative;
     display: flex;
@@ -56,7 +52,7 @@ body * {
     align-items: center;
 }
 
-.pattern-main { /*magic numbers?*/
+.pattern-main {
     position: absolute;
     max-width: 150px;
     bottom: 84px;
@@ -85,7 +81,7 @@ body * {
     line-height: 28px;
 }
 
-.btn-secondary { /*não achei códigos de outras pessoas q tenham feito essa transição no botão*/
+.btn-secondary {
     color: var(--cream-white);
     border: none;
     border-radius: 6px;
@@ -93,7 +89,6 @@ body * {
     background-color: var(--dark-blue);
     font-weight: bold;
     font-size: 1.8rem;
-    /*transition: all .3s linear; o transition não funciona aqui, tem que ser animation por conta do background ser um gradiente*/
     cursor: pointer;
     margin-bottom: 55px;
 }
@@ -104,21 +99,20 @@ body * {
 
 .main-hero {
     display: block;
-    margin: 0 auto; /*isso aqui tá sendo aplicado?*/
+    margin: 0 auto;
 }
 
 .main-hero-tablet, .main-hero-desktop {
     display: none;
 }
 
-main .infos {
+.main-content .infos {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     gap: 32px;
     margin: 56px 0px;
-    margin-bottom: 237px;
 }
 
 .info-item h1 {
@@ -137,7 +131,6 @@ main .infos {
     line-height: 26px;
 }
 
-/*FOOTER*/
 footer .recommendation-box {
     background-color: var(--dark-blue);
     border-radius: 15px;
@@ -146,6 +139,7 @@ footer .recommendation-box {
     align-items: center;
     text-align: center;
     height: 748px;
+    margin-top: 170px;
 }
 
 .recommendation-box-left {
@@ -229,7 +223,7 @@ footer .spans-jeremy-cmo {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 33px; /*perguntar o mateus sobre esse gap aqui*/
+    gap: 33px;
 }
 
 .nav-inner .logo-footer {
@@ -247,16 +241,11 @@ footer .spans-jeremy-cmo {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 1fr;
     grid-column-gap: 25px;
-    /*não sei como fazer o hover aqui, os icons têm que ficar mais claros*/
     margin-bottom: 76px;
 }
 
-/*MEDIA QUERY-TABLET*/
 @media screen and (min-width: 768px) {
-    /*GERAL*/
     .container {
-        padding-right: 0px;
-        padding-left: 0px;
         max-width: 768px;
     }
 
@@ -265,13 +254,13 @@ footer .spans-jeremy-cmo {
         display: block;
     }
 
-    /*HEADER*/
     .navbar {
         padding-bottom: 60px;
+        padding-left: 0;
+        padding-right: 0;
     }
 
-    /*MAIN*/
-    .pattern-main { /*magic numbers?*/
+    .pattern-main {
         max-width: 230px;
         bottom: 128px;
         left: 233px;
@@ -292,7 +281,7 @@ footer .spans-jeremy-cmo {
         display: none;
     }
 
-    .main-hero-tablet { /*magic numbers?*/
+    .main-hero-tablet {
         display: block;
         position: absolute;
         max-width: 280px;
@@ -301,17 +290,15 @@ footer .spans-jeremy-cmo {
         z-index: -1;
     }
 
-    main .infos { /*magic numbers?*/
+    .main-content .infos {
         display: flex;
         flex-direction: row;
         justify-content: center;
         text-align: center;
         gap: 120px;
-        margin: 90px 0px;
         margin-bottom: 237px;
     }
 
-    /*FOOTER*/
     footer .recommendation-box {
         margin-left: 40px;
         margin-right: 40px;
@@ -321,8 +308,8 @@ footer .spans-jeremy-cmo {
         flex-direction: row;
         align-items: center;
         justify-content: space-between;
-        gap: 160px;
-        padding: 72px 40px;
+        padding-top: 72px;
+        padding-bottom: 72px;
     }
 
     .nav-inner .logo-footer {
@@ -334,32 +321,26 @@ footer .spans-jeremy-cmo {
     }
 }
 
-
-
-/*MEDIA QUERY-DESKTOP*/
 @media screen and (min-width: 1100px) {
-    /*GERAL*/
     .container {
-        /*padding-right: 165px;
-        padding-left: 165px;*/
         max-width: 1100px;
     }
 
-    /*HEADER*/
     .navbar {
         padding-bottom: 170px;
     }
 
-    /*MAIN*/
     .heading-l {
         font-size: 7.2rem;
     }
 
-    main {
+    .main-content {
         display: flex;
+        justify-content: space-between;
+        margin-bottom: 64px;
     }
 
-    .pattern-main { /*magic numbers?*/
+    .pattern-main {
         max-width: 280px;
         bottom: 149px;
         left: 304px;
@@ -369,27 +350,24 @@ footer .spans-jeremy-cmo {
         display: none;
     }
 
-    .main-hero-desktop { /*magic numbers?*/
+    .main-hero-desktop {
         display: block;
         position: absolute;
         max-width: 350px;
-        top: 176px;
-        left: 715px;
+        bottom: 0;
+        right: -10%;
         z-index: -1;
     }
 
-    main .infos { /*magic numbers?*/
+    .main-content .infos {
         display: flex;
         flex-direction: column;
         text-align: left;
         gap: 60px;
-        margin-left: 285px;
+        margin-right: 32px;
     }
 
-    /*FOOTER*/
     footer .recommendation-box {
-        margin-left: 164px;
-        margin-right: 164px;
         flex-direction: row;
         height: 545px;
     }
